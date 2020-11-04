@@ -8,6 +8,19 @@ body {
     max-width: 100vw;
 }
 
+dt, dd {
+    display: block;
+    float: left;
+}
+
+dt {
+    clear: both;
+}
+
+section {
+    width: 100%;
+}
+
 .container {
     max-width: 70%;
     width: 70%;
@@ -24,6 +37,14 @@ body {
     width: 100%;
     height: 400px;
     background: mediumseagreen;
+}
+
+.delimiter {
+    width: 100%;
+    height: 3px;
+    background: lightgray;
+    border-radius: 2px;
+    margin: 15px 0;
 }
 
 header {
@@ -43,20 +64,86 @@ header {
     justify-content: space-between;
 }
 
-.header-links__el {
+.source-link {
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header-links > .source-link {
+    box-shadow: 1px 3px 3px darkgreen;
     border-radius: 100%;
     width: 30px;
     height: 30px;
     background: mediumseagreen;
-    color: white;
-    text-align: center;
-    box-shadow: 1px 3px 3px darkgreen;
-    cursor: pointer;
 }
 
-/*.profile-card {*/
-/*    height: 400px;*/
-/*    margin-top: 150px;*/
-/*    background: white;*/
-/*    width: 100%;*/
-/*}*/
+.profile-card__footer > .source-link {
+    width: 20px;
+    height: 20px;
+}
+
+.profile-card {
+    display: flex;
+    height: 400px;
+    margin-top: 100px;
+    background: white;
+}
+
+.profile-card__img {
+    width: 40%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.profile-card__content {
+    width: 60%;
+    position: relative;
+    padding: 20px;
+}
+
+.profile-card__title {
+    position: relative;
+    margin-top: 80px;
+}
+
+.profile-card__title > h1 > span:last-child {
+    color: mediumseagreen;
+}
+
+.profile-card__title:before {
+    content: "Hello & Welcome";
+    position: absolute;
+    top: -50px;
+    height: 20px;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    background: mediumseagreen;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px gray;
+}
+
+.profile-card__list {
+    padding: 0;
+    margin: 0;
+}
+
+.profile-card__list > dt {
+    width: 100px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.profile-card__footer {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    left: 0;
+    background: mediumseagreen;
+}
