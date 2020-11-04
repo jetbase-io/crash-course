@@ -19,6 +19,12 @@ dt {
 
 section {
     width: 100%;
+    box-sizing: border-box;
+}
+
+.section-title {
+    color: mediumseagreen;
+    margin: 100px 0;
 }
 
 .container {
@@ -145,5 +151,56 @@ header {
     width: 100%;
     height: 60px;
     left: 0;
+    background: mediumseagreen;
+}
+
+.skills {
+    display: flex;
+    background: white;
+    justify-content: space-between;
+    height: 350px;
+    padding: 30px;
+}
+
+.skills > * {
+    width: 45%;
+}
+
+.skills__description {
+    font-size: 17px;
+    color: darkgray;
+    font-weight: bold;
+    white-space: pre-line;
+    line-height: 1.5em;
+}
+
+.skills__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.skill {
+    width: 100%;
+}
+
+.skill__text {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.skill__bar {
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+}
+
+.skill__bar::-webkit-progress-bar {
+    background: lightgray;
+}
+
+.skill__bar::-webkit-progress-value {
     background: mediumseagreen;
 }
