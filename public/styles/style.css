@@ -352,4 +352,18 @@ header {
     .profile-card__footer {
         bottom: -40px;
     }
+
+    .skills {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .skills > * {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .skill > progress {
+        margin-bottom: 20px;
+    }
 }
