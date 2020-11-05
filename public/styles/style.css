@@ -326,6 +326,15 @@ header {
 
 
 @media screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header > * {
+        margin-bottom: 15px;
+    }
+
     .container {
         padding: 50px 0 0 0;
     }
@@ -333,6 +342,7 @@ header {
     .profile-card {
         flex-direction: column;
         height: auto;
+        margin-top: 50px;
     }
 
     .profile-card > * {
