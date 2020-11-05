@@ -111,6 +111,8 @@ header {
     color: white;
     text-align: center;
     cursor: pointer;
+    padding-top: 7px;
+    box-sizing: border-box;
 }
 
 .header-links > .source-link {
