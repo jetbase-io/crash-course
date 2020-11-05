@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -19,7 +20,6 @@ dt {
 
 section {
     width: 100%;
-    box-sizing: border-box;
 }
 
 .section-title {
@@ -31,17 +31,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 70%;
-    max-width: 70%;
     padding: 50px 15% 0 15%;
-}
-
-@media screen and (max-width: 480px) {
-    .container {
-        width: 100%;
-        max-width: 100%;
-        padding: 50px 0 0 0;
-    }
 }
 
 .header-string {
@@ -120,7 +110,6 @@ header {
     text-align: center;
     cursor: pointer;
     padding-top: 7px;
-    box-sizing: border-box;
 }
 
 .header-links > .source-link {
@@ -262,7 +251,6 @@ header {
     background: white;
     margin-top: 20px;
     padding: 20px;
-    box-sizing: border-box;
     border-radius: 3px;
     box-shadow: 2px 2px 7px gray;
 }
@@ -337,3 +325,8 @@ header {
 }
 
 
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 50px 0 0 0;
+    }
+}
