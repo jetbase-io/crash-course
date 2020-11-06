@@ -1,0 +1,31 @@
+.label {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    background: #0EB57D;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px gray;
+}
+
+.label--up:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: -12px;
+    clip-path: polygon(100% 0, 50% 100%, 100% 100%);
+    background: #0EB57D;
+    width: 25px;
+    height: 15px;
+}
+
+.label--down:after {
+    position: absolute;
+    content: "";
+    right: -3px;
+    top: 25px;
+    clip-path: polygon(100% 0, 50% 0, 100% 100%);
+    background: #0EB57D;
+    width: 30px;
+    height: 20px;
+}

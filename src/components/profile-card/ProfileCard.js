@@ -1,6 +1,7 @@
 import React from 'react';
 import './ProfileCard.css'
 
+import Label from "../common/Label";
 
 class ProfileCard extends React.Component {
     render() {
@@ -9,6 +10,7 @@ class ProfileCard extends React.Component {
                 <img className="profile-card__img" src="/images/profile.jpg" />
 
                 <div className="profile-card__content">
+                    <Label text='Hello & Welcome' type='down'/>
 
                 </div>
             </section>
