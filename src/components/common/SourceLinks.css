@@ -1,11 +1,16 @@
-.header-links {
+.source-links {
     display: flex;
     width: 300px;
     align-items: center;
     justify-content: space-between;
 }
 
-.header-links > .source-link {
+.profile-card__footer > .source-links {
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+header .link {
     box-shadow: 1px 3px 3px darkgreen;
     border-radius: 100%;
     width: 30px;

@@ -5,6 +5,7 @@ import Label from "../common/Label";
 
 import ProfileCardTitle from "./ProfileCardTitle";
 import ProfileCardList from "./ProfileCardList";
+import SourceLinks from "../common/SourceLinks";
 
 class ProfileCard extends React.Component {
     constructor(props) {
@@ -31,6 +32,10 @@ class ProfileCard extends React.Component {
                     <div className="delimiter"></div>
 
                     <ProfileCardList fields={this.fields}/>
+
+                    <div className="profile-card__footer">
+                        <SourceLinks />
+                    </div>
                 </div>
             </section>
         );

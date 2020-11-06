@@ -1,18 +1,18 @@
 import React from 'react';
-import './SourceLink.css'
+import './Link.css'
 
-class SourceLink extends React.Component {
+class Link extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
         return (
-            <a className="source-link" href={this.props.url} target="_blank">
+            <a className="link" href={this.props.url} target="_blank">
                 <img src={this.props.img} />
             </a>
         );
     }
 }
 
-export default SourceLink;
+export default Link;

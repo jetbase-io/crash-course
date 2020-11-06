@@ -1,9 +1,9 @@
 import React from 'react';
-import './HeaderLinks.css'
+import './SourceLinks.css'
 
-import SourceLink from "../common/SourceLink";
+import Link from "./Link";
 
-class HeaderLinks extends React.Component {
+class SourceLinks extends React.Component {
     constructor(props) {
         super(props);
 
@@ -20,11 +20,11 @@ class HeaderLinks extends React.Component {
 
     render() {
         return (
-            <div className="header-links">
-                {this.links.map((link, i) => <SourceLink key={i} url={link.url} img={link.img} />)}
+            <div className="source-links">
+                {this.links.map((link, i) => <Link key={i} url={link.url} img={link.img} />)}
             </div>
         );
     }
 }
 
-export default HeaderLinks;
+export default SourceLinks;
