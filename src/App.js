@@ -6,6 +6,9 @@ import HeaderString from "./components/common/HeaderString";
 
 import Header from "./components/header/Header";
 
+import ProfileCard from "./components/profile-card/ProfileCard";
+
+
 function App() {
     return (
         <>
@@ -13,6 +16,7 @@ function App() {
 
             <Container>
                 <Header />
+                <ProfileCard />
             </Container>
         </>
     );
