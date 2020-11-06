@@ -1,5 +1,5 @@
 import React from 'react';
-import './headerString.css'
+import './HeaderString.css'
 
 class HeaderString extends React.Component {
     render() {

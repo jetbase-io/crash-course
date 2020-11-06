@@ -1,13 +1,22 @@
 import React from 'react';
 
-import Container from './components/common/container';
-import HeaderString from "./components/common/headerString";
+// Common
+import Container from './components/common/Container';
+import HeaderString from "./components/common/HeaderString";
+
+// Header
+import Header from "./components/header/Header";
 
 function App() {
     return (
         <>
             <HeaderString />
-            <Container />
+            
+            <Container>
+                <Header>
+
+                </Header>
+            </Container>
         </>
     );
 }
