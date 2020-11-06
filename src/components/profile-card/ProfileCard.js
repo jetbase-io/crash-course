@@ -3,6 +3,7 @@ import './ProfileCard.css'
 
 import Label from "../common/Label";
 
+import ProfileCardTitle from "./ProfileCardTitle";
 import ProfileCardList from "./ProfileCardList";
 
 class ProfileCard extends React.Component {
@@ -25,6 +26,7 @@ class ProfileCard extends React.Component {
 
                 <div className="profile-card__content">
                     <Label text='Hello & Welcome' type='down'/>
+                    <ProfileCardTitle />
 
                     <div className="delimiter"></div>
 

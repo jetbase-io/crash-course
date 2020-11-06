@@ -21,6 +21,7 @@
 .profile-card__title {
     position: relative;
     margin-top: 50px;
+    text-transform: uppercase;
 }
 
 .profile-card__title > h1 > span:last-child {
