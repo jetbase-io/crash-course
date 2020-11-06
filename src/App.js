@@ -1,9 +1,15 @@
-import Container from './components/common/container'
+import React from 'react';
+
+import Container from './components/common/container';
+import HeaderString from "./components/common/headerString";
 
 function App() {
-  return (
-    <Container />
-  );
+    return (
+        <>
+            <HeaderString />
+            <Container />
+        </>
+    );
 }
 
 export default App;

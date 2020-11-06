@@ -1,0 +1,8 @@
+.header-string {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    background: #0EB57D;
+}
