@@ -8,7 +8,7 @@ const { setRoutes } = require('./utils');
 
 const routes = [
     {method: 'get', url: '/skills', callback: methods.getSkills},
-    {method: 'get', url: '/user', callback: methods.getUser},
+    {method: 'get', url: '/user', callback: methods.getUsers},
     {method: 'get', url: '/education', callback: methods.getEducation}
 ];
 

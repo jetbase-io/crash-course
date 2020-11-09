@@ -3,7 +3,7 @@ function setRoutes(app, routes) {
 
     routes.forEach(route => {
         app[route.method.toLowerCase()](route.url, (req, res) => {
-            res.send(route.callback());
+            res.send(route.callback(req.query));
         })
     })
 }

@@ -1,7 +1,9 @@
-function getJson(fileName) {
+function getJson(fileName, filter={}) {
     let data = require(`./data/${fileName}`);
 
     data = Array.isArray(data) ? data : [data];
+
+    data = data.filter(el => Object.keys(filter).every(key => filter[key] === el[key]));
 
     return {
       total: data.length,
@@ -9,20 +11,20 @@ function getJson(fileName) {
     };
 }
 
-function getSkills() {
-    return getJson('skills')
+function getSkills(filter={}) {
+    return getJson('skills', filter)
 }
 
-function getUser() {
-    return getJson('user')
+function getEducation(filter={}) {
+    return getJson('education', filter)
 }
 
-function getEducation() {
-    return getJson('education')
+function getUsers(filter={}) {
+    return getJson( 'user', filter);
 }
 
 module.exports = {
     getSkills,
-    getUser,
+    getUsers,
     getEducation
 };
