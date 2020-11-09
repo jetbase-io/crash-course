@@ -1,0 +1,90 @@
+.education__card {
+    position: relative;
+    width: calc(50% - 22px);
+    background: white;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 7px gray;
+}
+
+.education__card:nth-child(odd) {
+    float: left;
+}
+
+.education__card:nth-child(even) {
+    float: right;
+}
+
+.education__card:nth-child(1) {
+    margin: 0;
+}
+
+.education__card:nth-child(2) {
+    margin-top: 40px;
+}
+
+.education__card:nth-child(odd):after {
+    position: absolute;
+    right: -15px;
+    top: 5px;
+    content: "";
+    clip-path: polygon(50% 0%, 50% 100%, 100% 50%);
+    background: white;
+    width: 55px;
+    height: 55px;
+}
+
+.education__card:nth-child(even):before {
+    position: absolute;
+    left: -15px;
+    top: 5px;
+    content: "";
+    clip-path: polygon(50% 0%, 50% 100%, 0 50%);
+    background: white;
+    width: 55px;
+    height: 55px;
+}
+
+.education__card:nth-child(odd):before {
+    position: absolute;
+    right: -28px;
+    top: 26px;
+    clip-path: circle(50% at 50% 50%);
+    content: "";
+    background: #0EB57D;
+    width: 12px;
+    height: 12px;
+}
+
+.education__card:nth-child(even):after {
+    position: absolute;
+    left: -28px;
+    top: 26px;
+    clip-path: circle(50% at 50% 50%);
+    content: "";
+    background: #0EB57D;
+    width: 12px;
+    height: 12px;
+}
+
+.education__card__title {
+    color: #0EB57D;
+    margin-bottom: 10px;
+}
+
+.education__card__text {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .education__card {
+        white-space: pre-line;
+        font-size: 0.8rem;
+    }
+
+    .education__card__text {
+        margin-bottom: 20px;
+    }
+}
