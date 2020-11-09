@@ -3,25 +3,18 @@ import './Skill.css'
 
 import ProgressBar from "./ProgressBar";
 
-class Skill extends React.Component {
-    constructor(props) {
-        super(props);
+const Skill = (props) => {
+    const value = props.value || 0;
 
-        this.title = this.props.title;
-        this.value = this.props.value || 0;
-    }
-
-    render() {
-        return (
-            <div className="skill">
-                <div className="skill__text">
-                    <span>{this.title}</span>
-                    <span>{this.value}%</span>
-                </div>
-                <ProgressBar value={this.value} max="100" classes="skill__bar"/>
+    return (
+        <div className="skill">
+            <div className="skill__text">
+                <span>{props.title}</span>
+                <span>{value}%</span>
             </div>
-        );
-    }
-}
+            <ProgressBar value={value} className="skill__bar"/>
+        </div>
+    );
+};
 
 export default Skill;
