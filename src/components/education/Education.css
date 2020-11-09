@@ -1,0 +1,15 @@
+.education {
+    position: relative;
+}
+
+.education__center-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: white;
+    height: calc(600px - 10vw);
+    width: 3px;
+    border: 1px solid darkgray;
+    border-radius: 3px;
+}
