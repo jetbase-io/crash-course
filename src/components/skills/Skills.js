@@ -1,6 +1,8 @@
 import React from 'react';
 import './Skills.css'
 
+import Skill from "../common/Skill";
+
 class Skills extends React.Component {
     constructor(props) {
         super(props);
@@ -9,7 +11,14 @@ class Skills extends React.Component {
             "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." +
             "\n" +
             "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." +
-            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+        this.skills = [
+            {title: 'Front-End Development', value: 75},
+            {title: 'Back-End Development', value: 90},
+            {title: 'Mobile App Development', value: 80},
+            {title: 'Desktop Development', value: 70}
+        ]
     }
 
     render() {
@@ -23,7 +32,7 @@ class Skills extends React.Component {
                     </div>
 
                     <div className="skills__content">
-
+                        {this.skills.map(skill => <Skill title={skill.title} value={skill.value} />)}
                     </div>
                 </section>
             </>
