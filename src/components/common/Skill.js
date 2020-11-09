@@ -1,6 +1,8 @@
 import React from 'react';
 import './Skill.css'
 
+import ProgressBar from "./ProgressBar";
+
 class Skill extends React.Component {
     constructor(props) {
         super(props);
@@ -16,7 +18,7 @@ class Skill extends React.Component {
                     <span>{this.title}</span>
                     <span>{this.value}%</span>
                 </div>
-                <progress value={this.value} max="100" className="skill__bar"></progress>
+                <ProgressBar value={this.value} max="100" classes="skill__bar"/>
             </div>
         );
     }
