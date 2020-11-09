@@ -6,6 +6,8 @@ import Header from "./components/header/Header";
 
 import ProfileCard from "./components/profile-card/ProfileCard";
 
+import Skills from "./components/skills/Skills";
+
 
 function App() {
     return (
@@ -15,6 +17,7 @@ function App() {
             <Container>
                 <Header />
                 <ProfileCard />
+                <Skills />
             </Container>
         </>
     );

@@ -43,3 +43,15 @@ code {
   border-radius: 2px;
   margin: 15px 0;
 }
+
+.section-title {
+  color: #0EB57D;
+  margin: 100px 0;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 480px) {
+  .section-title {
+    margin-bottom: 50px;
+  }
+}

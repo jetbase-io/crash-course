@@ -1,0 +1,37 @@
+.skills {
+    display: flex;
+    background: white;
+    justify-content: space-between;
+    height: 350px;
+    padding: 30px;
+}
+
+.skills > * {
+    width: 45%;
+}
+
+.skills__description {
+    font-size: 17px;
+    color: darkgray;
+    font-weight: bold;
+    white-space: pre-line;
+    line-height: 1.5em;
+}
+
+.skills__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 480px) {
+    .skills {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .skills > * {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
