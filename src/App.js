@@ -6,19 +6,41 @@ import ProfileCard from "./components/profile-card/ProfileCard";
 import Skills from "./components/skills/Skills";
 import Education from "./components/education/Education";
 
-function App() {
-    return (
-        <>
-            <div className="header-string"/>
+import { getUsers } from './actions/requestActions';
 
-            <Container>
-                <Header />
-                <ProfileCard />
-                <Skills />
-                <Education />
-            </Container>
-        </>
-    );
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            user: null
+        }
+    };
+
+    async componentDidMount() {
+        const users = await getUsers({fullName: 'Dmitry Karavaev'});
+
+        this.setState({
+            user: users?.data?.[0]
+        })
+    }
+
+    render() {
+        const { user } = this.state;
+
+        return (
+            <>
+                <div className="header-string"/>
+
+                <Container>
+                    <Header user={user}/>
+                    <ProfileCard user={user}/>
+                    <Skills />
+                    <Education />
+                </Container>
+            </>
+        )
+    }
 }
 
 export default App;
