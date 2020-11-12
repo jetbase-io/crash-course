@@ -25,7 +25,7 @@ const Education = ({ userId }) => {
                 <div className="education__center-line" />
 
                 <div className="education-cards">
-                    {education.map(card => <EducationCard title={card.title} text={card.text} label={card.label}/>)}
+                    {education.map(card => <EducationCard key={card.id} title={card.title} text={card.text} label={card.label}/>)}
                 </div>
             </section>
         </>

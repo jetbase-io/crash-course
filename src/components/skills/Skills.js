@@ -29,7 +29,7 @@ const Skills = ({ userId }) => {
                 </div>
 
                 <div className="skills__content">
-                    {skills.map(skill => <Skill title={skill.title} value={skill.value} />)}
+                    {skills.map(skill => <Skill key={skill.id} title={skill.title} value={skill.value} />)}
                 </div>
             </section>
         </>
