@@ -28,7 +28,7 @@ const App = () => {
             <Container>
                 <Header userId={userId}/>
                 <ProfileCard userId={userId}/>
-                <Skills />
+                <Skills userId={userId}/>
                 <Education />
             </Container>
         </>
