@@ -1,11 +1,11 @@
 import React from 'react';
 import './HeaderTitle.css'
 
-const HeaderTitle = (props) => {
+const HeaderTitle = ({ fullName, grade }) => {
     return (
         <div className="header-title">
-            <h1>{props.fullName}</h1>
-            <h2>{props.grade}</h2>
+            <h1>{fullName}</h1>
+            <h2>{grade}</h2>
         </div>
     );
 };

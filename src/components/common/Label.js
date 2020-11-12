@@ -1,9 +1,9 @@
 import React from 'react';
 import './Label.css'
 
-const Label = (props) =>{
+const Label = ({ type, text }) =>{
     return (
-        <span className={`label label--${props.type}`}>{props.text}</span>
+        <span className={`label label--${type}`}>{text}</span>
     );
 };
 
