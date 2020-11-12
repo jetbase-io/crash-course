@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchUsers, selectUserById } from "./features/usersSlice";
 
 import Container from './components/common/Container';
 import Header from "./components/header/Header";
@@ -6,41 +8,31 @@ import ProfileCard from "./components/profile-card/ProfileCard";
 import Skills from "./components/skills/Skills";
 import Education from "./components/education/Education";
 
-import { getUsers } from './actions/requestActions';
+const App = () => {
+    const dispatch = useDispatch();
+    const postStatus = useSelector((state) => state.users.status);
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
+    const userId = 1;
+    const user = useSelector((state) => selectUserById(state, userId));
 
-        this.state = {
-            user: null
+    useEffect(() => {
+        if (postStatus === 'idle') {
+            dispatch(fetchUsers({id: userId}));
         }
-    };
+    }, [postStatus, dispatch]);
 
-    async componentDidMount() {
-        const users = await getUsers({fullName: 'Dmitry Karavaev'});
+    return (
+        <>
+            <div className="header-string"/>
 
-        this.setState({
-            user: users?.data?.[0]
-        })
-    }
-
-    render() {
-        const { user } = this.state;
-
-        return (
-            <>
-                <div className="header-string"/>
-
-                <Container>
-                    <Header user={user}/>
-                    <ProfileCard user={user}/>
-                    <Skills />
-                    <Education />
-                </Container>
-            </>
-        )
-    }
-}
+            <Container>
+                <Header userId={userId}/>
+                <ProfileCard userId={userId}/>
+                <Skills />
+                <Education />
+            </Container>
+        </>
+    )
+};
 
 export default App;
