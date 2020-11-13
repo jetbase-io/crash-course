@@ -22,10 +22,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/users', routes.user);
-app.use('/skills', routes.skill);
-app.use('/education', routes.education);
-
+routes(app);
 
 const eraseDatabaseOnSync = true;
 
