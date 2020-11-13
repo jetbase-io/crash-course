@@ -3,7 +3,7 @@ function getJson(fileName, filter={}) {
 
     data = Array.isArray(data) ? data : [data];
 
-    data = data.filter(el => Object.keys(filter).every(key => filter[key] === el[key]));
+    data = data.filter(el => Object.keys(filter).every(key => filter[key] == el[key]));
 
     return {
       total: data.length,

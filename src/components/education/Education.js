@@ -1,43 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Education.css'
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchEducation, selectAllEducation } from "../../features/educationSlice";
 
 import EducationCard from "./EducationCard";
-import {getEducation} from "../../actions/requestActions";
 
-class Education extends React.Component {
-    constructor(props) {
-        super(props);
+const Education = ({ userId }) => {
+    const dispatch = useDispatch();
+    const postStatus = useSelector((state) => state.users.status);
 
-        this.state = {
-            education: []
+    const education = useSelector(selectAllEducation);
+
+    useEffect(() => {
+        if (postStatus === 'idle') {
+            dispatch(fetchEducation({userId}));
         }
-    }
+    }, [postStatus, dispatch]);
 
-    async componentDidMount() {
-        const education = await getEducation({});
+    return (
+        <>
+            <h1 className="section-title">Education</h1>
 
-        this.setState({
-            education: education?.data || []
-        })
-    }
+            <section className="education">
+                <div className="education__center-line" />
 
-    render() {
-        const { education } = this.state;
-
-        return (
-            <>
-                <h1 className="section-title">Education</h1>
-
-                <section className="education">
-                    <div className="education__center-line" />
-
-                    <div className="education-cards">
-                        {education.map(card => <EducationCard title={card.title} text={card.text} label={card.label}/>)}
-                    </div>
-                </section>
-            </>
-        )
-    }
-}
+                <div className="education-cards">
+                    {education.map(card => <EducationCard key={card.id} title={card.title} text={card.text} label={card.label}/>)}
+                </div>
+            </section>
+        </>
+    )
+};
 
 export default Education;

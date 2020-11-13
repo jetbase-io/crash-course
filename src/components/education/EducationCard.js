@@ -3,12 +3,12 @@ import './EducationCard.css'
 
 import Label from "../common/Label";
 
-const EducationCard = (props) => {
+const EducationCard = ({ title, text, label }) => {
     return (
         <div className="education__card">
-            <h1 className="education__card__title">{props.title}</h1>
-            <h4 className="education__card__text">{props.text}</h4>
-            <Label text={props.label} type='up'/>
+            <h1 className="education__card__title">{title}</h1>
+            <h4 className="education__card__text">{text}</h4>
+            <Label text={label} type='up'/>
         </div>
     );
 };

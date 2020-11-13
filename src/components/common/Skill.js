@@ -3,13 +3,11 @@ import './Skill.css'
 
 import ProgressBar from "./ProgressBar";
 
-const Skill = (props) => {
-    const value = props.value || 0;
-
+const Skill = ({ value=0, title }) => {
     return (
         <div className="skill">
             <div className="skill__text">
-                <span>{props.title}</span>
+                <span>{title}</span>
                 <span>{value}%</span>
             </div>
             <ProgressBar value={value} className="skill__bar"/>

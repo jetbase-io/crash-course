@@ -1,13 +1,17 @@
 import React from 'react';
 import './Header.css'
+import { useSelector } from "react-redux";
+import { selectUserById } from "../../features/usersSlice";
 
 import SourceLinks from "../common/SourceLinks";
 import HeaderTitle from "./HeaderTitle";
 
-const Header = (props) => {
+const Header = ({ userId }) => {
+    const user = useSelector((state) => selectUserById(state, userId));
+
     return (
         <header>
-            <HeaderTitle fullName={props?.user?.fullName} grade={props?.user?.grade} />
+            <HeaderTitle fullName={user?.fullName} grade={user?.grade} />
             <SourceLinks />
         </header>
     );

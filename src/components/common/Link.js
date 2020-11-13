@@ -1,10 +1,10 @@
 import React from 'react';
 import './Link.css'
 
-const Link = (props) => {
+const Link = ({ url, img }) => {
     return (
-        <a className="link" href={props.url} target="_blank">
-            <img src={props.img} />
+        <a className="link" href={url} target="_blank">
+            <img src={img} />
         </a>
     );
 };
