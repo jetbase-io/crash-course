@@ -1,6 +1,23 @@
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define('user', {
         id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+        email: {
+            type: DataTypes.STRING,
+            unique: true,
+            validate: {
+                notEmpty: true
+            }
+        },
+        phone: {
+            type: DataTypes.STRING,
+            unique: true,
+            validate: {
+                notEmpty: true
+            }
+        },
+        age: DataTypes.INTEGER,
+        address: DataTypes.STRING,
+        website: DataTypes.STRING,
         fullName: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -15,13 +32,7 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
         },
-        skillsDescription: {
-            type: DataTypes.STRING(1000),
-            allowNull: false,
-            validate: {
-                notEmpty: true
-            }
-        }
+        skillsDescription: DataTypes.STRING(1000)
     });
 
     User.associate = (models) => {
