@@ -1,8 +1,9 @@
 module.exports = (sequelize, DataTypes) => {
     const Education = sequelize.define('education', {
+        id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+        userId: DataTypes.INTEGER,
         title: {
             type: DataTypes.STRING,
-            unique: true,
             allowNull: false,
             validate: {
                 notEmpty: true,
@@ -10,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         text: {
             type: DataTypes.STRING,
-            unique: true,
             allowNull: false,
             validate: {
                 notEmpty: true,
@@ -18,16 +18,15 @@ module.exports = (sequelize, DataTypes) => {
         },
         label: {
             type: DataTypes.STRING,
-            unique: true,
             allowNull: false,
             validate: {
                 notEmpty: true,
             },
-        },
+        }
     });
 
     Education.associate = (models) => {
-        Education.belongsTo(models.User);
+        Education.belongsTo(models.User, { foreignKey: 'userId' });
     };
 
     return Education;

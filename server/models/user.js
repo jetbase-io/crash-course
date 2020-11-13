@@ -1,13 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define('user', {
-        username: {
-            type: DataTypes.STRING,
-            unique: true,
-            allowNull: false,
-            validate: {
-                notEmpty: true,
-            },
-        },
+        id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
         fullName: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -22,8 +15,8 @@ module.exports = (sequelize, DataTypes) => {
                 notEmpty: true
             }
         },
-        skillDescription: {
-            type: DataTypes.STRING,
+        skillsDescription: {
+            type: DataTypes.STRING(1000),
             allowNull: false,
             validate: {
                 notEmpty: true
