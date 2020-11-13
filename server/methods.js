@@ -5,10 +5,7 @@ function getJson(fileName, filter={}) {
 
     data = data.filter(el => Object.keys(filter).every(key => filter[key] == el[key]));
 
-    return {
-      total: data.length,
-      data: data
-    };
+    return data;
 }
 
 function getSkills(filter={}) {
