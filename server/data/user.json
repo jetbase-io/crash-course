@@ -1,0 +1,28 @@
+[
+    {
+        "fullName": "Dmitry Karavaev",
+        "grade": "Full-stack web developer",
+        "profileInfo": [
+            {
+                "name": "Age",
+                "value": "22"
+            },
+            {
+                "name": "Address",
+                "value": "Some Street, Novosibirsk"
+            },
+            {
+                "name": "Email",
+                "value": "voobsheeee@mail.ru"
+            },
+            {
+                "name": "Phone",
+                "value": "8 800 555 3535"
+            },
+            {
+                "name": "Website",
+                "value": "https://github.com"
+            }
+        ]
+    }
+]
