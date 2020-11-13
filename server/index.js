@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const port = 5000;
 
+const sequelize = require('./models/index');
 const routes = require('./routes/index');
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,6 +18,9 @@ app.use('/users', routes.user);
 app.use('/skills', routes.skill);
 app.use('/education', routes.education);
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+
+sequelize.sync().then(() => {
+    app.listen(port, () => {
+        console.log(`Example app listening at http://localhost:${port}`)
+    });
 });
