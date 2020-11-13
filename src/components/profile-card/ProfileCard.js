@@ -13,6 +13,14 @@ import SourceLinks from "../common/SourceLinks";
 const ProfileCard = ({ userId }) => {
     const user = useSelector((state) => selectUserById(state, userId));
 
+    const profileInfo = [
+        {name: 'Age', value: user?.age},
+        {name: 'Address', value: user?.address},
+        {name: 'Email', value: user?.email},
+        {name: 'Phone', value: user?.phone},
+        {name: 'Website', value: user?.website}
+    ];
+
     return (
         <section className="profile-card">
             <img className="profile-card__img" src="/images/profile.jpg" />
@@ -23,7 +31,7 @@ const ProfileCard = ({ userId }) => {
 
                 <div className="delimiter" />
 
-                <ProfileCardList fields={user?.profileInfo}/>
+                <ProfileCardList fields={profileInfo}/>
 
                 <div className="profile-card__footer">
                     <SourceLinks />
