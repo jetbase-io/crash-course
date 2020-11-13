@@ -1,10 +1,16 @@
 const { Router } =  require('express');
-const { getEducation } = require('../methods');
-
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.send(getEducation(req.query));
+router.get('/', async (req, res) => {
+    const users = await req.context.models.Education.findAll();
+    return res.send(users);
+});
+
+router.get('/:educationId', async (req, res) => {
+    const user = await req.context.models.Education.findByPk(
+        req.params.educationId,
+    );
+    return res.send(user);
 });
 
 module.exports = router;
