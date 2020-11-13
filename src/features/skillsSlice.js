@@ -9,8 +9,7 @@ const initialState = skillsAdapter.getInitialState({
 });
 
 export const fetchSkills = createAsyncThunk('skills/fetchSkills', async (query) => {
-    const res = await getRequest('/skills', query);
-    return res?.data
+    return await getRequest('/skills', query);
 });
 
 const skillsSlice = createSlice({

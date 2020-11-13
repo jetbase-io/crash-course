@@ -9,8 +9,7 @@ const initialState = usersAdapter.getInitialState({
 });
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async (query) => {
-    const res = await getRequest('/users', query);
-    return res?.data
+    return await getRequest('/users', query);
 });
 
 const usersSlice = createSlice({

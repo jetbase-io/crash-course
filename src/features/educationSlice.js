@@ -9,8 +9,7 @@ const initialState = educationAdapter.getInitialState({
 });
 
 export const fetchEducation = createAsyncThunk('education/fetchEducation', async (query) => {
-    const res = await getRequest('/education', query);
-    return res?.data
+    return await getRequest('/education', query);
 });
 
 const educationSlice = createSlice({
