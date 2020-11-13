@@ -4,10 +4,10 @@ import './Header.css'
 import SourceLinks from "../common/SourceLinks";
 import HeaderTitle from "./HeaderTitle";
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header>
-            <HeaderTitle fullName="Dmitry Karavaev" grade="Full-stack web developer" />
+            <HeaderTitle fullName={props?.user?.fullName} grade={props?.user?.grade} />
             <SourceLinks />
         </header>
     );
